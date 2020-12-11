@@ -6,15 +6,31 @@ namespace Bakery
     public class Program
     {
         public static double orderTotal = 0;
-
-        public static void TotalPriceBread()
+        
+        public static void TotalPriceBread(int orderNum)
         {
-            
+            Bread bread = new Bread();
+            if (orderNum % 2 == 0)
+            {
+                bread.SetPrice(3);
+                int breadPrice = bread.GetPrice();
+                int totalBread = breadPrice * orderNum;
+                double convertTotal = System.Convert.ToDouble(totalBread);
+                orderTotal += convertTotal;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
+            else
+            {
+                int breadPrice = bread.GetPrice();
+                int totalBread = breadPrice * orderNum;
+                double convertTotal = System.Convert.ToDouble(totalBread);
+                orderTotal += convertTotal;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
         }
 
         public static void OrderBread()
         {
-            Bread bread = new Bread();
             Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
             int orderNum = int.Parse(Console.ReadLine());
             Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to complete your order of bread? ('Yes' or 'No')");
@@ -22,23 +38,7 @@ namespace Bakery
             if (answer == "Yes" || answer == "No")
             {
                 // get total to complete order
-                if (orderNum % 2 == 0)
-                {
-                    bread.SetPrice(3);
-                    int breadPrice = bread.GetPrice();
-                    int totalBread = breadPrice * orderNum;
-                    double convertTotal = System.Convert.ToDouble(totalBread);
-                    orderTotal += convertTotal;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
-                else
-                {
-                    int breadPrice = bread.GetPrice();
-                    int totalBread = breadPrice * orderNum;
-                    double convertTotal = System.Convert.ToDouble(totalBread);
-                    orderTotal += convertTotal;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
+                TotalPriceBread(orderNum);
                 // ask if would like pastries
                 Console.WriteLine("Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
                 string answer2 = Console.ReadLine();
