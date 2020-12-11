@@ -20,9 +20,17 @@ namespace Bakery
                 int orderNum = int.Parse(Console.ReadLine());
                 Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to complete your bread order? ('Yes' or 'No')");
                 string answer = Console.ReadLine();
-                
+                if (answer == "Yes")
+                {
+                    End();
+                }
 
             }
+        }
+        public static void End()
+        {
+            Console.WriteLine("That will be " + orderTotal + " please!")
+            Console.WriteLine("Pleasure doing business with you, have a wonderful day!");
         }
     }
 }
