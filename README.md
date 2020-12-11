@@ -67,6 +67,12 @@ No known bugs at this time.
     <td>bread.SetPrice()</td>
     <td>2</td>
   </tr>
+  <tr>
+    <td>4</td>
+    <td>Create a Pastry class</td>
+    <td>Pastry pastry = new Pastry();</td>
+    <td>pastry</td>
+  </tr>
 </table>
 <br>
 
