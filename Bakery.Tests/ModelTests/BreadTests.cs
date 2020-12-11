@@ -26,8 +26,8 @@ namespace Bakery.Tests
         public void SetPrice_SetsPriceOfBread_Int()
         {
             Bread bread = new Bread();
-            int testPrice = 5;
-            int price = bread.SetPrice(5);
+            int testPrice = 2;
+            int price = bread.SetPrice(2);
             Assert.AreEqual(testPrice, price);
         }
     }
