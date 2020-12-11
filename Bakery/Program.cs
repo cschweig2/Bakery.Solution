@@ -31,7 +31,22 @@ namespace Bakery
 
         public static void TotalPricePastry(int orderNum)
         {
-            
+            Pastry pastry = new Pastry();
+            if (orderNum % 2 == 0)
+                {
+                    pastry.SetPrice(1.50);
+                    double pastryPrice = pastry.GetPrice();
+                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
+                    orderTotal += totalPastry;
+                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+                }
+                else
+                {
+                    double pastryPrice = pastry.GetPrice();
+                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
+                    orderTotal += totalPastry;
+                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+                }
         }
 
         public static void OrderBread()
@@ -60,28 +75,13 @@ namespace Bakery
 
         public static void OrderPastries()
         {
-            Pastry pastry = new Pastry();
             Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
             int orderNum = int.Parse(Console.ReadLine());
             Console.WriteLine("You have ordered " + orderNum + " pastries. Would you like to complete your order of pastries? ('Yes' or 'No')");
             string answer = Console.ReadLine();
             if (answer == "Yes" || answer == "No")
             {
-                if (orderNum % 2 == 0)
-                {
-                    pastry.SetPrice(1.50);
-                    double pastryPrice = pastry.GetPrice();
-                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                    orderTotal += totalPastry;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
-                else
-                {
-                    double pastryPrice = pastry.GetPrice();
-                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                    orderTotal += totalPastry;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
+                TotalPricePastry(orderNum);
             }
             Console.WriteLine("Will that complete your order? ('Yes' or 'No')");
             string answer2 = Console.ReadLine();
