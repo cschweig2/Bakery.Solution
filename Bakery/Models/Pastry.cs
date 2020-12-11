@@ -14,7 +14,7 @@ namespace Bakery.Models
 
         public double SetPrice(double price)
         {
-            if (price <= 1.50)
+            if (price >= 1.50)
             {
                 _price = price;
             }
