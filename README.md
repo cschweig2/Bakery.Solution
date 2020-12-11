@@ -51,9 +51,15 @@ No known bugs at this time.
   </tr>
   <tr>
     <td>1</td>
-    <td>Create a Words class</td>
-    <td>Words newWords = new Words();</td>
-    <td>newWords</td>
+    <td>Create a Bread class</td>
+    <td>Bread bread = new Bread();</td>
+    <td>bread;</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Create a Pastry class</td>
+    <td>Pastry pastry = new Pastry();</td>
+    <td>pastry;</td>
   </tr>
 </table>
 <br>
