@@ -79,6 +79,12 @@ No known bugs at this time.
     <td>pastry.GetPrice()</td>
     <td>2</td>
   </tr>
+  <tr>
+    <td>6</td>
+    <td>Method sets price of 1 order of a pastry</td>
+    <td>pastry.SetPrice()</td>
+    <td>1.5</td>
+  </tr>
 </table>
 <br>
 

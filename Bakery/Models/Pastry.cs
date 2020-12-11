@@ -5,7 +5,7 @@ namespace Bakery.Models
 {
     public class Pastry
     {
-        private int _price = 1;
+        private int _price = 2;
 
         public int GetPrice()
         {
