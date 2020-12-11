@@ -73,6 +73,12 @@ No known bugs at this time.
     <td>Pastry pastry = new Pastry();</td>
     <td>pastry</td>
   </tr>
+  <tr>
+    <td>5</td>
+    <td>Method returns price of 1 order of a pastry</td>
+    <td>pastry.GetPrice()</td>
+    <td>2</td>
+  </tr>
 </table>
 <br>
 
