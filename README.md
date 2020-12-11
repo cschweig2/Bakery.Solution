@@ -58,8 +58,14 @@ No known bugs at this time.
   <tr>
     <td>2</td>
     <td>Method returns price of 1 order of bread</td>
-    <td>Bread.GetPrice()</td>
+    <td>bread.GetPrice()</td>
     <td>5</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Method sets price of 1 order of bread</td>
+    <td>bread.SetPrice()</td>
+    <td>2</td>
   </tr>
 </table>
 <br>
@@ -81,3 +87,10 @@ _REPL_<br>
 *This software is licensed under the MIT license.*
 
 Copyright (c) 2020 **Chelsea Becker**
+
+
+// determine price of order total
+// determine price of one order of bread
+// getter for price to return price
+// add to total order, OrderTotal will be in UI to show total 
+// OR, bread order total in bread class and pastry order total in pastry class
