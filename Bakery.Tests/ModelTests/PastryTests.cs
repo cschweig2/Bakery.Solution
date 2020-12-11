@@ -30,6 +30,5 @@ namespace Bakery.Tests
             double price = pastry.SetPrice(1.50);
             Assert.AreEqual(testPrice, price);
         }
-
     }
 }
