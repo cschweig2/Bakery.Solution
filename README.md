@@ -53,13 +53,13 @@ No known bugs at this time.
     <td>1</td>
     <td>Create a Bread class</td>
     <td>Bread bread = new Bread();</td>
-    <td>bread;</td>
+    <td>bread</td>
   </tr>
   <tr>
     <td>2</td>
-    <td>Create a Pastry class</td>
-    <td>Pastry pastry = new Pastry();</td>
-    <td>pastry;</td>
+    <td>Method returns price of 1 order of bread</td>
+    <td>Bread.GetPrice()</td>
+    <td>5</td>
   </tr>
 </table>
 <br>
