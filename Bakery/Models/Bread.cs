@@ -11,5 +11,14 @@ namespace Bakery.Models
         {
             return _price;
         }
+
+        public int SetPrice(int price)
+        {
+            if (price >= 2)
+            {
+                _price = price;
+            }
+            return _price;
+        }
     }
 }
