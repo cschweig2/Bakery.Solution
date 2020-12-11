@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace Bakery
+namespace Bakery.Models
 {
     public class Bread
     {
-        
+
     }
 }
