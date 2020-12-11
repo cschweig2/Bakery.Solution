@@ -10,7 +10,7 @@ namespace Bakery
         public static void OrderBread()
         {
             Bread bread = new Bread();
-            Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $4.");
+            Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
             int orderNum = int.Parse(Console.ReadLine());
             Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to complete your bread order? ('Yes' or 'No')");
             string answer = Console.ReadLine();
@@ -18,18 +18,18 @@ namespace Bakery
             {
                 if (orderNum % 2 == 0)
                 {
-                    bread.SetPrice(2);
+                    bread.SetPrice(3);
                     int breadPrice = bread.GetPrice();
                     int totalBread = breadPrice * orderNum;
                     double convertTotal = System.Convert.ToDouble(totalBread);
                     orderTotal += convertTotal;
-                    Console.WriteLine("Your subtotal is " + orderTotal + ".");
+                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
                 }
                 else
                 {
                     int breadPrice = bread.GetPrice();
                     int totalBread = breadPrice * orderNum;
-                    Console.WriteLine("Your subtotal is " + totalBread + ".");
+                    Console.WriteLine("Your subtotal is $" + totalBread + ".");
                 }
                 
                 Console.WriteLine("Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
@@ -46,6 +46,16 @@ namespace Bakery
                 Console.WriteLine("How many more loaves would you like to add to your order?");
                 orderNum = int.Parse(Console.ReadLine());
             }
+        }
+        public static void OrderPastries()
+        {
+            Pastry pastry = new Pastry();
+            Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
+        }
+        public static void End()
+        {
+            Console.WriteLine("That will be $" + orderTotal + ", please!");
+            Console.WriteLine("Pleasure doing business with you, have a wonderful day!");
         }
 
         public static void Main()
@@ -64,11 +74,6 @@ namespace Bakery
             // {
             //     orderPastries();
             // }
-        }
-        public static void End()
-        {
-            Console.WriteLine("That will be $" + orderTotal + " ,please!");
-            Console.WriteLine("Pleasure doing business with you, have a wonderful day!");
         }
     }
 }
