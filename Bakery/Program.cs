@@ -29,6 +29,11 @@ namespace Bakery
             }
         }
 
+        public static void TotalPricePastry(int orderNum)
+        {
+            
+        }
+
         public static void OrderBread()
         {
             Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
