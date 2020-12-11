@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Bakery.Tests
 {
     [TestClass]
-    public class BakeryTests
+    public class BreadTests
     {
         [TestMethod]
         public void BreadConstructor_CreatesInstanceOfBread_Bread()
