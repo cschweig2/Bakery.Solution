@@ -6,6 +6,10 @@ namespace Bakery
     public class Program
     {
         public static double orderTotal = 0;
+        public static int pastryOrderCount = 0;
+        public static int breadOrderCount = 0;
+        public static int orderNumPastries = 0;
+        public static int orderNumBread = 0;
         
         public static void TotalPriceBread(int orderNum)
         {
@@ -49,59 +53,59 @@ namespace Bakery
                 }
         }
 
-        public static void OrderBread()
+        public static void OrderBread(int count)
         {
             Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
             int orderNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to complete your order of bread? ('Yes' or 'No')");
+            Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
             string answer = Console.ReadLine();
-            if (answer == "Yes" || answer == "No")
+            if (answer == "Yes")
             {
-                // get total to complete order
                 TotalPriceBread(orderNum);
-                // ask if would like pastries
-                Console.WriteLine("Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
-                string answer2 = Console.ReadLine();
-                if (answer2 == "Yes")
-                {
-                    OrderPastries();
-                }
-                else if (answer2 == "No")
-                {
-                    End();
-                }
+                OrderPastries(pastryOrderCount);
+                breadOrderCount++;
+            }
+            else if (answer == "No")
+            {
+                TotalPriceBread(orderNum);
+                End();
             }
         }
 
-        public static void OrderPastries()
+        public static void OrderPastries(int count)
         {
-            Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
-            int orderNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("You have ordered " + orderNum + " pastries. Would you like to complete your order of pastries? ('Yes' or 'No')");
-            string answer = Console.ReadLine();
-            if (answer == "Yes" || answer == "No")
+            if (pastryOrderCount > 0)
             {
-                TotalPricePastry(orderNum);
-            }
-            Console.WriteLine("Will that complete your order? ('Yes' or 'No')");
-            string answer2 = Console.ReadLine();
-            if (answer2 == "Yes")
-            {
-                End();
-            }
-            else if (answer2 == "No")
-            {
-                Console.WriteLine("What else can I get for you today? ('Bread' or 'Pastries')");
-                string answer3 = Console.ReadLine();
-                if (answer == "Bread")
+                Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
+                int orderNum = int.Parse(Console.ReadLine());
+                Console.WriteLine("You have ordered " + orderNum + " pastries. Would you like to add bread to your order of pastries? ('Yes' or 'No')");
+                string answer = Console.ReadLine();
+                if (answer == "Yes")
                 {
-                    OrderBread();
+        
+                    TotalPricePastry(orderNum);
+                    OrderBread(breadOrderCount);
+                    pastryOrderCount++;
                 }
-                else if (answer == "Pastries")
+                else if (answer == "No")
                 {
-                    OrderPastries();
+                    TotalPricePastry(orderNum);
+                    End();
                 }
             }
+            else
+            {
+                Console.WriteLine("How many more pastries would you like to order? As a reminder, they are $2 each, or 2 for $3");
+                int orderNum2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("You have ordered " + orderNum2 + " more pastries. Should we complete your order? ('Yes' or 'No')");
+                string answer2 = Console.ReadLine();
+                if (answer2 == "Yes")
+                {
+                    orderNum += orderNum2;
+                    TotalPricePastry(orderNum);
+                }
+            }
+            
         }
 
         public static void End()
