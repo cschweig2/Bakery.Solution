@@ -74,4 +74,4 @@ _REPL_<br>
 
 *This software is licensed under the MIT license.*
 
-Copyright (c) 2020 **Chelsea Becker, Agata Kolodziej**
+Copyright (c) 2020 **Chelsea Becker**
