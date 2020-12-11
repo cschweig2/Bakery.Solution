@@ -5,11 +5,21 @@ namespace Bakery.Models
 {
     public class Pastry
     {
-        private int _price = 2;
+        private double _price = 2.00;
 
-        public int GetPrice()
+        public double GetPrice()
         {
             return _price;
         }
+
+        public double SetPrice(double price)
+        {
+            if (price <= 1.50)
+            {
+                _price = price;
+            }
+            return _price;
+        }
+
     }
 }

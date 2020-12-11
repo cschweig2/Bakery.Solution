@@ -27,7 +27,7 @@ namespace Bakery.Tests
         {
             Pastry pastry = new Pastry();
             double testPrice = 1.50;
-            double price = pastry.GetPrice();
+            double price = pastry.SetPrice(2.00);
             Assert.AreEqual(testPrice, price);
         }
 
