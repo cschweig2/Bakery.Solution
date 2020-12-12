@@ -16,7 +16,7 @@ namespace Bakery
             Bread bread = new Bread();
             if (orderNum % 2 == 0)
             {
-                bread.SetPrice(3);
+                bread.SetPrice(4);
                 int breadPrice = bread.GetPrice();
                 int totalBread = breadPrice * orderNum;
                 double convertTotal = System.Convert.ToDouble(totalBread);
@@ -59,7 +59,7 @@ namespace Bakery
         {
             if (breadOrderCount < 1)
             {
-                Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
+                Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $8.");
                 orderNumBread = int.Parse(Console.ReadLine());
                 Console.WriteLine("You have ordered " + orderNumBread + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
                 string answer = Console.ReadLine();
