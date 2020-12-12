@@ -6,7 +6,7 @@
 
 ## Description
 
-_Bakery is a program that allows the user to view the cost of pastries and bread sold at the bakery, place an order, and then view their total cost for the order. There are deals available for the customer, such as "buy 2, get 1 free" for bread, and "buy 1 for \$2 or 3" for pastries._
+_Bakery is a program that allows the user to view the cost of pastries and bread sold at the bakery, place an order, and then view their total cost for the order. There are deals available for the customer, such as "buy 2 for $8" for bread, and "buy 2 for $3" for pastries._
 
 ## Setup/Installation Requirements
 
@@ -14,11 +14,11 @@ _Bakery is a program that allows the user to view the cost of pastries and bread
 
 1. _Download the 64-bit .NET Core SDK (Software Development Kit) by following this link: https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer._<br>
 1a. _Follow prompts to begin your download. The download will be a .exe file. Click to install when it is finished downloading._
-2. _After clicking the downloaded .exe file, follow the prompts using suggested default settings to install._
+2. _After clicking the downloaded .exe file, follow the prompts in the installer and use suggested default settings._
 3. _You can confirm a successful installation by opening a command line terminal and running the command $ dotnet --version, which should return a version number._
 
 
-## Installing .NET Framework for Mac Users
+### Installing .NET Framework for Mac Users
 
 1. _Download the .NET Core SDK by following this link: https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer._<br>
 1a. _Follow prompts to begin your download. The download will be a .pkg file. Click to install when it is finished downloading._
@@ -91,7 +91,7 @@ No known bugs at this time.
 
 ## Support and contact details
 
-_If you run into any issues, you can contact the creator at cschweig2@gmail.com, or make contributions to the code on GitHub via forking and creating a new branch._
+_If you run into any issues, you can contact the creator at chelraebecker@gmail.com, or make contributions to the code on GitHub via forking and creating a new branch._
 
 ## Technologies Used
 
