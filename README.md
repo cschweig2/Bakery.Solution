@@ -91,6 +91,12 @@ No known bugs at this time.
     <td>Drink coffee = new Drink();</td>
     <td>coffee</td>
   </tr>
+  <tr>
+    <td>8</td>
+    <td>Method sets price of a coffee</td>
+    <td>coffee.SetPrice();</td>
+    <td>2</td>
+  </tr>
 </table>
 <br>
 
