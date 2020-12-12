@@ -25,6 +25,7 @@ namespace Bakery
             }
             else
             {
+                bread.SetPrice(5);
                 int breadPrice = bread.GetPrice();
                 int totalBread = breadPrice * orderNum;
                 double convertTotal = System.Convert.ToDouble(totalBread);
@@ -46,6 +47,7 @@ namespace Bakery
                 }
                 else
                 {
+                    pastry.SetPrice(2);
                     double pastryPrice = pastry.GetPrice();
                     double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
                     orderTotal += totalPastry;
@@ -55,41 +57,68 @@ namespace Bakery
 
         public static void OrderBread(int count)
         {
-            Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
-            int orderNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("You have ordered " + orderNum + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
-            string answer = Console.ReadLine();
-            if (answer == "Yes")
+            if (breadOrderCount < 1)
             {
-                TotalPriceBread(orderNum);
-                OrderPastries(pastryOrderCount);
-                breadOrderCount++;
+                Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $6.");
+                orderNumBread = int.Parse(Console.ReadLine());
+                Console.WriteLine("You have ordered " + orderNumBread + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No')");
+                string answer = Console.ReadLine();
+                if (answer == "Yes")
+                {
+                    breadOrderCount++;
+                    TotalPriceBread(orderNumBread);
+                    OrderPastries(pastryOrderCount);
+                }
+                else if (answer == "No")
+                {
+                    TotalPriceBread(orderNumBread);
+                    End();
+                }
             }
-            else if (answer == "No")
+            else
             {
-                TotalPriceBread(orderNum);
-                End();
+                Console.WriteLine("How many more loaves of bread would you like to order? As a reminder, they are $5 each, or 2 for $6.");
+                int orderNum2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("You have ordered " + orderNum2 + " more loaves of bread. Should we complete your order? ('Yes' or 'No')");
+                string answer2 = Console.ReadLine();
+                if (answer2 == "Yes")
+                {
+                    orderNumBread = orderNum2;
+                    TotalPriceBread(orderNumBread);
+                }
+                else if (answer2 == "No")
+                {
+                    Console.WriteLine("Is there anything else I can get for you? ('Bread' or 'Pastries')");
+                    string answer3 = Console.ReadLine();
+                    if (answer3 == "Bread")
+                    {
+                        OrderBread(breadOrderCount);
+                    }
+                    else if (answer3 == "Pastries")
+                    {
+                        OrderPastries(pastryOrderCount);
+                    }
+                }
             }
         }
 
         public static void OrderPastries(int count)
         {
-            if (pastryOrderCount > 0)
+            if (pastryOrderCount < 1)
             {
                 Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
-                int orderNum = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNum + " pastries. Would you like to add bread to your order of pastries? ('Yes' or 'No')");
+                orderNumPastries = int.Parse(Console.ReadLine());
+                Console.WriteLine("You have ordered " + orderNumPastries + " pastries. Would you like to add bread to your order of pastries? ('Yes' or 'No')");
                 string answer = Console.ReadLine();
                 if (answer == "Yes")
                 {
-        
-                    TotalPricePastry(orderNum);
-                    OrderBread(breadOrderCount);
                     pastryOrderCount++;
+                    TotalPricePastry(orderNumPastries);
+                    OrderBread(breadOrderCount);
                 }
                 else if (answer == "No")
                 {
-                    TotalPricePastry(orderNum);
+                    TotalPricePastry(orderNumPastries);
                     End();
                 }
             }
@@ -101,11 +130,23 @@ namespace Bakery
                 string answer2 = Console.ReadLine();
                 if (answer2 == "Yes")
                 {
-                    orderNum += orderNum2;
-                    TotalPricePastry(orderNum);
+                    orderNumPastries = orderNum2;
+                    TotalPricePastry(orderNumPastries);
                 }
+                else if (answer2 == "No")
+                {
+                    Console.WriteLine("Is there anything else I can get for you? ('Bread' or 'Pastries')");
+                    string answer3 = Console.ReadLine();
+                    if (answer3 == "Bread")
+                    {
+                        OrderBread(breadOrderCount);
+                    }
+                    else if (answer3 == "Pastries")
+                    {
+                        OrderPastries(pastryOrderCount);
+                    }
+                } 
             }
-            
         }
 
         public static void End()
@@ -124,11 +165,11 @@ namespace Bakery
 
             if (orderChoice == "Bread")
             {
-                OrderBread();
+                OrderBread(orderNumBread);
             }
             else if (orderChoice == "Pastries")
             {
-                OrderPastries();
+                OrderPastries(orderNumPastries);
             }
         }
     }
