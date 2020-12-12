@@ -160,7 +160,8 @@ namespace Bakery
             Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
             Console.WriteLine("Hello! Welcome to Pierre's Bakery!");
             Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
-            Console.WriteLine("Would you like to place an order for bread or pastries? ('Bread' or 'Pastries')");
+            Console.WriteLine("Here is our menu: Coffee-$2, Bread-$5 for 1 loaf or 2 loaves for $8, Pastries-$2 for 1 or 2 for $3.");
+            Console.WriteLine("What would you like to order? ('Bread', 'Pastries', or 'Coffee')");
             string orderChoice = Console.ReadLine();
 
             if (orderChoice == "Bread")
