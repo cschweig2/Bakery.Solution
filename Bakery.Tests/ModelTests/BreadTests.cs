@@ -18,6 +18,7 @@ namespace Bakery.Tests
         {
             Bread bread = new Bread();
             int testPrice = 5;
+            bread.SetPrice(5);
             int price = bread.GetPrice();
             Assert.AreEqual(testPrice, price);
         }

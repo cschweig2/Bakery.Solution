@@ -18,6 +18,7 @@ namespace Bakery.Tests
         {
             Pastry pastry = new Pastry();
             double testPrice = 2.00;
+            pastry.SetPrice(2.00);
             double price = pastry.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
