@@ -11,6 +11,13 @@ namespace Bakery
         public static int orderNumPastries = 0;
         public static int orderNumBread = 0;
         
+        // public static void TotalPriceCoffee(int orderNum)
+        // {
+        //     Drink coffee = new Drink();
+        //     coffee.SetPrice(2);
+        //     int coffeePrice = coffee.GetPrice();
+        // }
+
         public static void TotalPriceBread(int orderNum)
         {
             Bread bread = new Bread();
