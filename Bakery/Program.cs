@@ -10,6 +10,7 @@ namespace Bakery
         public static int breadOrderCount = 0;
         public static int orderNumPastries = 0;
         public static int orderNumBread = 0;
+        public static int orderNumCoffee = 0;
         
 
         public static void TotalPriceBread(int orderNum)
@@ -173,6 +174,10 @@ namespace Bakery
             else if (orderChoice == "Pastries")
             {
                 OrderPastries(orderNumPastries);
+            }
+            else if (orderChoice == "Coffee")
+            {
+                OrderCoffee(orderNumCoffee);
             }
         }
     }
