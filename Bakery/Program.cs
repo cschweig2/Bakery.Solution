@@ -24,6 +24,15 @@ namespace Bakery
                 orderTotal += convertTotal;
                 Console.WriteLine("Your subtotal is $" + orderTotal + ".");
             }
+            else if ((orderNum - 1) % 2 == 0)
+            {
+                bread.SetPrice(4);
+                int breadPrice = bread.GetPrice();
+                int totalBread = breadPrice * (orderNum - 1);
+                double convertTotal = System.Convert.ToDouble(totalBread);
+                orderTotal += convertTotal + 5;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
             else
             {
                 bread.SetPrice(5);
