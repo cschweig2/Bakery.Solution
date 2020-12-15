@@ -97,6 +97,12 @@ No known bugs at this time.
     <td>coffee.GetPrice();</td>
     <td>2</td>
   </tr>
+  <tr>
+    <td>9</td>
+    <td>Method gets size of a coffee</td>
+    <td>coffee.GetSize();</td>
+    <td>"small"</td>
+  </tr>
 </table>
 <br>
 
