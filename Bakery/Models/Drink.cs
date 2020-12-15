@@ -6,7 +6,7 @@ namespace Bakery.Models
     public class Drink
     {
         private string _size { get; set; }
-        private int _price = 2;
+        private int _price { get; set; }
 
         public Drink(string size, int price)
         {
