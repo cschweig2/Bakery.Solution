@@ -87,7 +87,7 @@ namespace Bakery
             {
                 Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $8.");
                 orderNumBread = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNumBread + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' or 'No' or 'Complete order')");
+                Console.WriteLine("You have ordered " + orderNumBread + " loaves of bread. Would you like to add pastries to your order? They are $2 each, or 2 for $3.('Yes' | 'No' | 'Complete order')");
                 string answer = Console.ReadLine();
                 if (answer == "Yes")
                 {
@@ -110,7 +110,7 @@ namespace Bakery
             {
                 Console.WriteLine("How many more loaves of bread would you like to order? As a reminder, they are $5 each, or 2 for $6.");
                 int orderNum2 = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNum2 + " more loaves of bread. Should we complete your order? ('Yes' or 'No')");
+                Console.WriteLine("You have ordered " + orderNum2 + " more loaves of bread. Should we complete your order? ('Yes' | 'No')");
                 string answer2 = Console.ReadLine();
                 if (answer2 == "Yes")
                 {
@@ -132,7 +132,7 @@ namespace Bakery
             {
                 Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
                 orderNumPastries = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNumPastries + " pastries. Would you like to add bread to your order of pastries? ('Yes' or 'No')");
+                Console.WriteLine("You have ordered " + orderNumPastries + " pastries. Would you like to add bread to your order of pastries? ('Yes' | 'No')");
                 string answer = Console.ReadLine();
                 if (answer == "Yes")
                 {
@@ -150,7 +150,7 @@ namespace Bakery
             {
                 Console.WriteLine("How many more pastries would you like to order? As a reminder, they are $2 each, or 2 for $3");
                 int orderNum2 = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNum2 + " more pastries. Should we complete your order? ('Yes' or 'No')");
+                Console.WriteLine("You have ordered " + orderNum2 + " more pastries. Should we complete your order? ('Yes' | 'No')");
                 string answer2 = Console.ReadLine();
                 if (answer2 == "Yes")
                 {
@@ -178,7 +178,7 @@ namespace Bakery
             {
                 Console.WriteLine("Message = {0}", ex.Message);
             }
-            Console.WriteLine("Is there anything else I can get for you? ('Bread' or 'Pastries' or 'Complete order')");
+            Console.WriteLine("Is there anything else I can get for you? ('Bread' | 'Pastries' | 'Complete order')");
             string answer = Console.ReadLine();
             try
             {
