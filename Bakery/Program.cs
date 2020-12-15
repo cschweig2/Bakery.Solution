@@ -48,21 +48,29 @@ namespace Bakery
         {
             Pastry pastry = new Pastry();
             if (orderNum % 2 == 0)
-                {
-                    pastry.SetPrice(1.50);
-                    double pastryPrice = pastry.GetPrice();
-                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                    orderTotal += totalPastry;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
-                else
-                {
-                    pastry.SetPrice(2);
-                    double pastryPrice = pastry.GetPrice();
-                    double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                    orderTotal += totalPastry;
-                    Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-                }
+            {
+                pastry.SetPrice(1.50);
+                double pastryPrice = pastry.GetPrice();
+                double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
+                orderTotal += totalPastry;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
+            else if ((orderNum - 1) % 2 == 0)
+            {
+                pastry.SetPrice(1.50);
+                double pastryPrice = pastry.GetPrice();
+                double totalPastry = pastryPrice * (System.Convert.ToDouble(orderNum) - 1);
+                orderTotal += totalPastry + 2;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
+            else
+            {
+                pastry.SetPrice(2);
+                double pastryPrice = pastry.GetPrice();
+                double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
+                orderTotal += totalPastry;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
         }
 
         public static void TotalPriceCoffee(string size)
