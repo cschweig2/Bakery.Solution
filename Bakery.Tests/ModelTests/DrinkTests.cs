@@ -16,9 +16,9 @@ namespace Bakery.Tests
         [TestMethod]
         public void GetPrice_GetsPriceOfCoffee_Int()
         {
-            Drink coffee = new Drink("small", 2);
-            int testPrice = 2;
-            int price = coffee.GetPrice();
+            Drink coffeeTest = new Drink("small", 2);
+            int testPrice = 3;
+            int price = coffeeTest.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
     }
