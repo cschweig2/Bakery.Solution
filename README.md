@@ -93,8 +93,8 @@ No known bugs at this time.
   </tr>
   <tr>
     <td>8</td>
-    <td>Method sets price of a coffee</td>
-    <td>coffee.SetPrice();</td>
+    <td>Method gets price of a coffee</td>
+    <td>coffee.GetPrice();</td>
     <td>2</td>
   </tr>
 </table>
