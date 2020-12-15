@@ -16,10 +16,18 @@ namespace Bakery.Tests
         [TestMethod]
         public void GetPrice_GetsPriceOfCoffee_Int()
         {
-            Drink coffeeTest = new Drink("small", 2);
+            Drink coffee = new Drink("small", 2);
             int testPrice = 2;
-            int price = coffeeTest.GetPrice();
+            int price = coffee.GetPrice();
             Assert.AreEqual(testPrice, price);
+        }
+        [TestMethod]
+        public void GetSize_GetsSizeOfCoffee_String()
+        {
+            Drink coffee = new Drink("small", 2);
+            string testSize = "large";
+            string size = coffee.GetSize();
+            Assert.AreEqual(testSize, size);
         }
     }
 }
