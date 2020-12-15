@@ -8,6 +8,7 @@ namespace Bakery
         public static double orderTotal = 0;
         public static int pastryOrderCount = 0;
         public static int breadOrderCount = 0;
+        public static int mainOrderCount = 0;
         public static int orderNumPastries = 0;
         public static int orderNumBread = 0;
         public static int orderNumCoffee = 0;
@@ -100,6 +101,7 @@ namespace Bakery
 
         public static void OrderBread(int count)
         {
+            mainOrderCount++;
             if (breadOrderCount < 1)
             {
                 Console.WriteLine("How many loaves of bread would you like to order? They are $5 each, or 2 for $8.");
@@ -145,22 +147,23 @@ namespace Bakery
 
         public static void OrderPastries(int count)
         {
+            mainOrderCount++;
             if (pastryOrderCount < 1)
             {
                 Console.WriteLine("How many pastries would you like to order? They are $2 each, or 2 for $3.");
                 orderNumPastries = int.Parse(Console.ReadLine());
-                Console.WriteLine("You have ordered " + orderNumPastries + " pastries. Would you like to add bread to your order of pastries? ('Yes' | 'No')");
+                Console.WriteLine("You have ordered " + orderNumPastries + " pastries. Should we complete your order? ('Yes' | 'No')");
                 string answer = Console.ReadLine();
                 if (answer == "Yes")
                 {
-                    pastryOrderCount++;
                     TotalPricePastry(orderNumPastries);
-                    OrderBread(breadOrderCount);
+                    End();
                 }
                 else if (answer == "No")
                 {
+                    pastryOrderCount++;
                     TotalPricePastry(orderNumPastries);
-                    End();
+                    Main();
                 }
             }
             else
@@ -185,6 +188,7 @@ namespace Bakery
 
         public static void OrderCoffee(int count)
         {
+            mainOrderCount++;
             Console.WriteLine("What size coffee would you like to order?('Small' | 'Medium' | 'Large')");
             string coffeeSize = Console.ReadLine();
             try
@@ -195,7 +199,7 @@ namespace Bakery
             {
                 Console.WriteLine("Message = {0}", ex.Message);
             }
-            Console.WriteLine("Is there anything else I can get for you? ('Bread' | 'Pastries' | 'Complete order')");
+            Console.WriteLine("Is there anything else I can get for you? ('Bread' | 'Pastries' | 'Complete order' | 'Main menu')");
             string answer = Console.ReadLine();
             try
             {
@@ -213,6 +217,11 @@ namespace Bakery
                 {
                     End();
                 }
+                else if (answer == "Main menu")
+                {
+                    TotalPriceCoffee(coffeeSize);
+                    Main();
+                }
             }
             catch (Exception ex)
             {
@@ -228,26 +237,50 @@ namespace Bakery
 
         public static void Main()
         {
-            Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
-            Console.WriteLine("Hello! Welcome to Pierre's Bakery!");
-            Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
-            Console.WriteLine("MENU");
-            Console.WriteLine("~~~");
-            Console.WriteLine("| Coffee: $1 for small, $2 for medium, $3 for large | Bread: $5 for 1 loaf or 2 loaves for $8 | Pastries: $2 for 1 or 2 for $3 |");
-            Console.WriteLine("What would you like to order? ('Bread', 'Pastries', or 'Coffee')");
-            string orderChoice = Console.ReadLine();
+            if (mainOrderCount < 1)
+            {
+                Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
+                Console.WriteLine("Hello! Welcome to Pierre's Bakery!");
+                Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
+                Console.WriteLine("MENU");
+                Console.WriteLine("~~~");
+                Console.WriteLine("| Coffee: $1 for small, $2 for medium, $3 for large | Bread: $5 for 1 loaf or 2 loaves for $8 | Pastries: $2 for 1 or 2 for $3 |");
+                Console.WriteLine("What would you like to order? ('Bread', 'Pastries', or 'Coffee')");
+                string orderChoice = Console.ReadLine();
 
-            if (orderChoice == "Bread")
-            {
-                OrderBread(orderNumBread);
+                if (orderChoice == "Bread")
+                {
+                    OrderBread(orderNumBread);
+                }
+                else if (orderChoice == "Pastries")
+                {
+                    OrderPastries(orderNumPastries);
+                }
+                else if (orderChoice == "Coffee")
+                {
+                    OrderCoffee(orderNumCoffee);
+                }
             }
-            else if (orderChoice == "Pastries")
+            else
             {
-                OrderPastries(orderNumPastries);
-            }
-            else if (orderChoice == "Coffee")
-            {
-                OrderCoffee(orderNumCoffee);
+                Console.WriteLine("MENU");
+                Console.WriteLine("~~~");
+                Console.WriteLine("| Coffee: $1 for small, $2 for medium, $3 for large | Bread: $5 for 1 loaf or 2 loaves for $8 | Pastries: $2 for 1 or 2 for $3 |");
+                Console.WriteLine("What would you like to order? ('Bread', 'Pastries', or 'Coffee')");
+                string orderChoice = Console.ReadLine();
+
+                if (orderChoice == "Bread")
+                {
+                    OrderBread(orderNumBread);
+                }
+                else if (orderChoice == "Pastries")
+                {
+                    OrderPastries(orderNumPastries);
+                }
+                else if (orderChoice == "Coffee")
+                {
+                    OrderCoffee(orderNumCoffee);
+                }
             }
         }
     }
