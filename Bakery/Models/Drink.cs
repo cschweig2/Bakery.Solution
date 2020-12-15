@@ -6,15 +6,15 @@ namespace Bakery.Models
     public class Drink
     {
         private string _size { get; set; }
-        private int _price { get; set; }
+        private double _price { get; set; }
 
-        public Drink(string size, int price)
+        public Drink(string size, double price)
         {
             _size = size;
             _price = price;
         }
 
-        public int GetPrice()
+        public double GetPrice()
         {
             return _price;
         }
