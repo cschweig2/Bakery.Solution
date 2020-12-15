@@ -205,22 +205,18 @@ namespace Bakery
             {
                 if (answer == "Bread")
                 {
-                    TotalPriceCoffee(coffeeSize);
                     OrderBread(breadOrderCount);
                 }
                 else if (answer == "Pastries")
                 {
-                    TotalPriceCoffee(coffeeSize);
                     OrderPastries(pastryOrderCount);
                 }
                 else if (answer == "Complete order")
                 {
-                    TotalPriceCoffee(coffeeSize);
                     End();
                 }
                 else if (answer == "Main menu")
                 {
-                    TotalPriceCoffee(coffeeSize);
                     Main();
                 }
             }
