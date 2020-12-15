@@ -11,7 +11,6 @@ namespace Bakery
         public static int orderNumPastries = 0;
         public static int orderNumBread = 0;
         public static int orderNumCoffee = 0;
-        
 
         public static void TotalPriceBread(int orderNum)
         {
@@ -55,6 +54,31 @@ namespace Bakery
                     orderTotal += totalPastry;
                     Console.WriteLine("Your subtotal is $" + orderTotal + ".");
                 }
+        }
+
+        public static void TotalPriceCoffee(string size)
+        {
+            if (size == "Small")
+            {
+                Drink coffeeSmall = new Drink("small", 1);
+                double price = coffeeSmall.GetPrice();
+                orderTotal += price;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
+            else if (size == "Medium")
+            {
+                Drink coffeeMed = new Drink("medium", 2);
+                double price = coffeeMed.GetPrice();
+                orderTotal += price;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
+            else if (size == "Large")
+            {
+                Drink coffeeLge = new Drink("Large", 3);
+                double price = coffeeLge.GetPrice();
+                orderTotal += price;
+                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
+            }
         }
 
         public static void OrderBread(int count)
@@ -151,6 +175,22 @@ namespace Bakery
             }
         }
 
+        public static void OrderCoffee(int count)
+        {
+            Console.WriteLine("What size coffee would you like to order?('Small' | 'Medium' | 'Large')");
+            string coffeeSize = Console.ReadLine();
+            try
+            {
+                TotalPriceCoffee(coffeeSize);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Message = {0}", ex.Message);
+            }
+            
+
+        }
+
         public static void End()
         {
             Console.WriteLine("That will be $" + orderTotal + ", please!");
@@ -163,7 +203,7 @@ namespace Bakery
             Console.WriteLine("Hello! Welcome to Pierre's Bakery!");
             Console.WriteLine("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~");
             Console.WriteLine("MENU");
-            Console.WriteLine("| Coffee: $2 | Bread: $5 for 1 loaf or 2 loaves for $8 | Pastries: $2 for 1 or 2 for $3 |");
+            Console.WriteLine("| Coffee: $1 for small, $2 for medium, $3 for large | Bread: $5 for 1 loaf or 2 loaves for $8 | Pastries: $2 for 1 or 2 for $3 |");
             Console.WriteLine("What would you like to order? ('Bread', 'Pastries', or 'Coffee')");
             string orderChoice = Console.ReadLine();
 
