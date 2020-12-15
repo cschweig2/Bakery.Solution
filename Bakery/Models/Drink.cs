@@ -18,5 +18,10 @@ namespace Bakery.Models
         {
             return _price;
         }
+
+        public string GetSize()
+        {
+            return _size;
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Bakery.Tests
         public void GetSize_GetsSizeOfCoffee_String()
         {
             Drink coffee = new Drink("small", 2);
-            string testSize = "large";
+            string testSize = "small";
             string size = coffee.GetSize();
             Assert.AreEqual(testSize, size);
         }
