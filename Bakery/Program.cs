@@ -215,6 +215,7 @@ namespace Bakery
                 }
                 else if (answer == "Complete order")
                 {
+                    TotalPriceCoffee(coffeeSize);
                     End();
                 }
                 else if (answer == "Main menu")
