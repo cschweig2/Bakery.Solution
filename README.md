@@ -121,6 +121,12 @@ No known bugs at this time.
     <td>1. Bread bread = new Bread(2) 2. bread.SetPrice()</td>
     <td>bread.GetPrice() == 4</td>
   </tr>
+  <tr>
+    <td>13</td>
+    <td>SetPrice() will set price to $4/each loaf of bread when user triggers 2 for $8 discount on quantities of 3 or more</td>
+    <td>1. Bread bread = new Bread(3) 2. bread.SetPrice()</td>
+    <td>First 2 loaves are $4(discounted), the 3rd is $5</td>
+  </tr>
 </table>
 <br>
 
