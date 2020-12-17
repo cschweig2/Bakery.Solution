@@ -115,6 +115,12 @@ No known bugs at this time.
     <td>Pastry pastry = new Pastry(orderNum);</td>
     <td>pastry</td>
   </tr>
+  <tr>
+    <td>12</td>
+    <td>Creates instance of coffee that stores the users preferred size and order number</td>
+    <td>Coffee coffee = new Coffee(orderNum)</td>
+    <td>coffee</td>
+  </tr>
 </table>
 <br>
 
