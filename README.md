@@ -103,6 +103,12 @@ No known bugs at this time.
     <td>coffee.GetSize();</td>
     <td>"small"</td>
   </tr>
+  <tr>
+    <td>10</td>
+    <td>Creates instance of bread object that stores price and users order number</td>
+    <td>Bread bread = new Bread(orderNum);</td>
+    <td>bread</td>
+  </tr>
 </table>
 <br>
 
