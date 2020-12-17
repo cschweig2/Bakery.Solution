@@ -6,7 +6,7 @@ namespace Bakery.Models
     public class Bread
     {
         private int _price { get; set; }
-        private int _orderNum { set; }
+        private int _orderNum { get; set; }
 
         public Bread(int orderNum)
         {
