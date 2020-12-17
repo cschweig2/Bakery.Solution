@@ -117,9 +117,9 @@ No known bugs at this time.
   </tr>
   <tr>
     <td>12</td>
-    <td>Creates instance of coffee that stores the users preferred size and order number</td>
-    <td>Coffee coffee = new Coffee(orderNum)</td>
-    <td>coffee</td>
+    <td>SetPrice() will set price to $4/each loaf of bread when user triggers 2 for $8 discount</td>
+    <td>1. Bread bread = new Bread(2) 2. bread.SetPrice()</td>
+    <td>bread.GetPrice() == 4</td>
   </tr>
 </table>
 <br>
