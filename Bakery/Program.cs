@@ -15,7 +15,7 @@ namespace Bakery
 
         public static void TotalPriceBread(int orderNum)
         {
-            Bread bread = new Bread();
+            Bread bread = new Bread(2);
             if (orderNum % 2 == 0)
             {
                 bread.SetPrice(4);
