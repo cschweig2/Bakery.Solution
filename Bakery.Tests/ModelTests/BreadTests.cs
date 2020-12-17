@@ -31,7 +31,7 @@ namespace Bakery.Tests
             Assert.AreEqual(testPrice, price);
         }
         [TestMethod]
-        public void GetPrice_ReturnsDiscountedPriceWhenTriggered_Int()
+        public void SetPrice_ReturnsDiscountedPriceWhenTriggered_Int()
         {
             Bread bread = new Bread(2);
             if (bread.OrderNum % 2 == 0)
