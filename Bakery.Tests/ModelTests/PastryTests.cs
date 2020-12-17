@@ -10,13 +10,13 @@ namespace Bakery.Tests
         [TestMethod]
         public void PastryConstructor_CreatesInstanceofPastry_Pastry()
         {
-            Pastry pastry = new Pastry();
+            Pastry pastry = new Pastry(2);
             Assert.AreEqual(typeof(Pastry), pastry.GetType());
         }
         [TestMethod]
         public void GetPrice_ReturnsPriceOfPastry_Double()
         {
-            Pastry pastry = new Pastry();
+            Pastry pastry = new Pastry(2);
             double testPrice = 2.00;
             pastry.SetPrice(2.00);
             double price = pastry.GetPrice();
@@ -25,10 +25,11 @@ namespace Bakery.Tests
         [TestMethod]
         public void SetPrice_SetsPriceOfPastry_Double()
         {
-            Pastry pastry = new Pastry();
+            Pastry pastry = new Pastry(2);
             double testPrice = 1.50;
             double price = pastry.SetPrice(1.50);
             Assert.AreEqual(testPrice, price);
         }
+        
     }
 }
