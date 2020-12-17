@@ -109,6 +109,12 @@ No known bugs at this time.
     <td>Bread bread = new Bread(orderNum);</td>
     <td>bread</td>
   </tr>
+  <tr>
+    <td>11</td>
+    <td>Creates instance of pastry object that stores price and users order number</td>
+    <td>Pastry pastry = new Pastry(orderNum);</td>
+    <td>pastry</td>
+  </tr>
 </table>
 <br>
 
