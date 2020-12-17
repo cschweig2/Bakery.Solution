@@ -6,6 +6,13 @@ namespace Bakery.Models
     public class Pastry
     {
         private double _price { get; set; }
+        private int _orderNum { get; set; }
+
+        public Pastry(int orderNum)
+        {
+            _orderNum = orderNum;
+            _price = 0;
+        }
 
         public double GetPrice()
         {
