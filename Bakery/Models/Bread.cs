@@ -23,7 +23,7 @@ namespace Bakery.Models
         {
             if (price >= 2)
             {
-                _price = price;
+                _price = 1;
             }
             return _price;
         }

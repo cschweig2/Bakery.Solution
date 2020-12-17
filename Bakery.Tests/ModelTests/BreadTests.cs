@@ -16,7 +16,7 @@ namespace Bakery.Tests
         [TestMethod]
         public void GetPrice_ReturnsPriceOfBread_Int()
         {
-            Bread bread = new Bread(2);
+            Bread bread = new Bread(1);
             int testPrice = 5;
             bread.SetPrice(5);
             int price = bread.GetPrice();
@@ -28,6 +28,18 @@ namespace Bakery.Tests
             Bread bread = new Bread(2);
             int testPrice = 2;
             int price = bread.SetPrice(2);
+            Assert.AreEqual(testPrice, price);
+        }
+        [TestMethod]
+        public void GetPrice_ReturnsDiscountedPriceWhenTriggered_Int()
+        {
+            Bread bread = new Bread(2);
+            if (bread.OrderNum % 2 == 0)
+            {
+                bread.SetPrice(4);
+            }
+            int testPrice = 4;
+            int price = bread.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
     }
