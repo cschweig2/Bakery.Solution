@@ -34,6 +34,12 @@ namespace Bakery.Models
                 double totalPastry = Price * System.Convert.ToDouble(orderNum);
                 return totalPastry;
             }
+            else if ((orderNum - 1) % 2 == 0)
+            {
+                SetPrice(1.50);
+                double totalPastry = Price * System.Convert.ToDouble(orderNum - 1);
+                return totalPastry += 2;
+            }
             else
             {
                 return Price * orderNum;
