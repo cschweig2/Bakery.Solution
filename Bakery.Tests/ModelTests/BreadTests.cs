@@ -38,14 +38,13 @@ namespace Bakery.Tests
             int result = Bread.TotalPriceBread(2);
             Assert.AreEqual(testTotalPrice, result);
         }
-        // [TestMethod]
-        // public void TotalPriceBread_ReturnsDiscountedPricePlusRegularPriceOnOddNumberedOrders_Int()
-        // {
-        //     Bread bread = new Bread(3);
-        //     bread.SetPrice(4);
-        //     int testPrice = 
-        //     int price = bread.GetPrice();
-            
-        // }
+        [TestMethod]
+        public void TotalPriceBread_ReturnsDiscountedPricePlusRegularPriceOnOddNumberedOrders_Int()
+        {
+            Bread bread = new Bread();
+            int testTotalPrice = 13;
+            int result = Bread.TotalPriceBread(3);
+            Assert.AreEqual(testTotalPrice, result);
+        }
     }
 }
