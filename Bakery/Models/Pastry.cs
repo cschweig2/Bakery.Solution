@@ -45,5 +45,6 @@ namespace Bakery.Models
                 return Price * orderNum;
             }
         }
+        
     }
 }
