@@ -27,13 +27,13 @@ namespace Bakery.Models
         {
             if (orderNum % 2 == 0)
             {
-                Bread.SetPrice(4);
+                SetPrice(4);
                 int totalPrice = Price * orderNum;
                 return totalPrice;
             }
             else if ((orderNum - 1) % 2 == 0)
             {
-                Bread.SetPrice(4);
+                SetPrice(4);
                 int totalPrice = Price * (orderNum - 1);
                 return totalPrice + 5;
             }
