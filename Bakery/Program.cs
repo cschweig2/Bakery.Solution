@@ -13,94 +13,9 @@ namespace Bakery
         public static int orderNumBread = 0;
         public static int orderNumCoffee = 0;
 
-        public static void TotalPriceBread(int orderNum)
-        {
-            Bread bread = new Bread(orderNum);
-            if (orderNum % 2 == 0)
-            {
-                bread.SetPrice(4);
-                int breadPrice = bread.GetPrice();
-                int totalBread = breadPrice * orderNum;
-                double convertTotal = System.Convert.ToDouble(totalBread);
-                orderTotal += convertTotal;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else if ((orderNum - 1) % 2 == 0)
-            {
-                bread.SetPrice(4);
-                int breadPrice = bread.GetPrice();
-                int totalBread = breadPrice * (orderNum - 1);
-                double convertTotal = System.Convert.ToDouble(totalBread);
-                orderTotal += convertTotal + 5;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else
-            {
-                bread.SetPrice(5);
-                int breadPrice = bread.GetPrice();
-                int totalBread = breadPrice * orderNum;
-                double convertTotal = System.Convert.ToDouble(totalBread);
-                orderTotal += convertTotal;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-        }
-
-        public static void TotalPricePastry(int orderNum)
-        {
-            Pastry pastry = new Pastry(orderNum);
-            if (orderNum % 2 == 0)
-            {
-                pastry.SetPrice(1.50);
-                double pastryPrice = pastry.GetPrice();
-                double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                orderTotal += totalPastry;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else if ((orderNum - 1) % 2 == 0)
-            {
-                pastry.SetPrice(1.50);
-                double pastryPrice = pastry.GetPrice();
-                double totalPastry = pastryPrice * (System.Convert.ToDouble(orderNum) - 1);
-                orderTotal += totalPastry + 2;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else
-            {
-                pastry.SetPrice(2);
-                double pastryPrice = pastry.GetPrice();
-                double totalPastry = pastryPrice * System.Convert.ToDouble(orderNum);
-                orderTotal += totalPastry;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-        }
-
-        public static void TotalPriceCoffee(string size)
-        {
-            if (size == "Small")
-            {
-                Drink coffeeSmall = new Drink("small", 1);
-                double price = coffeeSmall.GetPrice();
-                orderTotal += price;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else if (size == "Medium")
-            {
-                Drink coffeeMed = new Drink("medium", 2);
-                double price = coffeeMed.GetPrice();
-                orderTotal += price;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-            else if (size == "Large")
-            {
-                Drink coffeeLge = new Drink("Large", 3);
-                double price = coffeeLge.GetPrice();
-                orderTotal += price;
-                Console.WriteLine("Your subtotal is $" + orderTotal + ".");
-            }
-        }
-
         public static void OrderBread(int count)
         {
+            Bread bread = new Bread();
             mainOrderCount++;
             if (breadOrderCount < 1)
             {
@@ -111,17 +26,20 @@ namespace Bakery
                 if (answer == "Yes")
                 {
                     breadOrderCount++;
-                    TotalPriceBread(orderNumBread);
+                    double totalBread = bread.TotalPriceBread(orderNumBread);
+                    orderTotal += totalBread;
                     OrderPastries(pastryOrderCount);
                 }
                 else if (answer == "No")
                 {
-                    TotalPriceBread(orderNumBread);
+                    double totalBread = bread.TotalPriceBread(orderNumBread);
+                    orderTotal += totalBread;
                     Main();
                 }
                 else if (answer == "Complete order")
                 {
-                    TotalPriceBread(orderNumBread);
+                    double totalBread = bread.TotalPriceBread(orderNumBread);
+                    orderTotal += totalBread;
                     End();
                 }
             }
@@ -134,12 +52,14 @@ namespace Bakery
                 if (answer2 == "Yes")
                 {
                     orderNumBread = orderNum2;
-                    TotalPriceBread(orderNumBread);
+                    double totalBread = bread.TotalPriceBread(orderNumBread);
+                    orderTotal += totalBread;
                     End();
                 }
                 else if (answer2 == "No")
                 {
-                    TotalPriceBread(orderNumBread);
+                    double totalBread = bread.TotalPriceBread(orderNumBread);
+                    orderTotal += totalBread;
                     Main();
                 }
             }
@@ -147,6 +67,7 @@ namespace Bakery
 
         public static void OrderPastries(int count)
         {
+            Pastry pastry = new Pastry();
             mainOrderCount++;
             if (pastryOrderCount < 1)
             {
@@ -156,13 +77,15 @@ namespace Bakery
                 string answer = Console.ReadLine();
                 if (answer == "Yes")
                 {
-                    TotalPricePastry(orderNumPastries);
+                    double totalPastry = pastry.TotalPricePastry(orderNumPastries);
+                    orderTotal += totalPastry;
                     End();
                 }
                 else if (answer == "No")
                 {
                     pastryOrderCount++;
-                    TotalPricePastry(orderNumPastries);
+                    double totalPastry = pastry.TotalPricePastry(orderNumPastries);
+                    orderTotal += totalPastry;
                     Main();
                 }
             }
@@ -175,12 +98,14 @@ namespace Bakery
                 if (answer2 == "Yes")
                 {
                     orderNumPastries = orderNum2;
-                    TotalPricePastry(orderNumPastries);
+                    double totalPastry = pastry.TotalPricePastry(orderNumPastries);
+                    orderTotal += totalPastry;
                     End();
                 }
                 else if (answer2 == "No")
                 {
-                    TotalPricePastry(orderNumPastries);
+                    double totalPastry = pastry.TotalPricePastry(orderNumPastries);
+                    orderTotal += totalPastry;
                     Main();
                 } 
             }
@@ -193,7 +118,24 @@ namespace Bakery
             string coffeeSize = Console.ReadLine();
             try
             {
-                TotalPriceCoffee(coffeeSize);
+                if (coffeeSize == "Small")
+                {
+                    Drink coffee = new Drink(coffeeSize, 1);
+                    double totalCoffeeSmall = coffee.TotalPriceCoffee(1);
+                    orderTotal += totalCoffeeSmall;
+                }
+                else if (coffeeSize == "Medium")
+                {
+                    Drink coffee = new Drink(coffeeSize, 2);
+                    double totalCoffeeMedium = coffee.TotalPriceCoffee(1);
+                    orderTotal += totalCoffeeMedium;
+                }
+                else if (coffeeSize == "Large")
+                {
+                    Drink coffee = new Drink(coffeeSize, 3);
+                    double totalCoffeeLarge = coffee.TotalPriceCoffee(1);
+                    orderTotal += totalCoffeeLarge;
+                }
             }
             catch (Exception ex)
             {
