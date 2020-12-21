@@ -130,14 +130,20 @@ No known bugs at this time.
   <tr>
     <td>14</td>
     <td>TotalPricePastry() will set price to $1.50/each pastry when user triggers 2 for $3 discount on quantities of 2</td>
-    <td>1. Pastry pastry = new Pastry() 2. bread.TotalPriceBread(2)</td>
+    <td>1. Pastry pastry = new Pastry() 2. pastry.TotalPricePastry(2)</td>
     <td>total price = 3</td>
   </tr>
   <tr>
     <td>15</td>
     <td>TotalPricePastry() will set price to $1.50/each pastry when user triggers 2 for $3 discount on quantities of 3 or more</td>
-    <td>1. Pastry pastry = new Pastry() 2. bread.TotalPriceBread(3)</td>
+    <td>1. Pastry pastry = new Pastry() 2. pastry.TotalPricePastry(3)</td>
     <td>total price = 5</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>TotalPriceCoffee() will return the total price of small coffees based on order</td>
+    <td>1. Coffee coffeeSmall = new Coffee("Small", 1) 2. coffeeSmall.TotalPriceCoffee(3)</td>
+    <td>total price = 1</td>
   </tr>
 </table>
 <br>
