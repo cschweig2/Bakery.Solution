@@ -52,7 +52,7 @@ No known bugs at this time.
   <tr>
     <td>1</td>
     <td>Create a Bread class</td>
-    <td>Bread bread = new Bread();</td>
+    <td>Bread bread = new Bread()</td>
     <td>bread</td>
   </tr>
   <tr>
@@ -70,7 +70,7 @@ No known bugs at this time.
   <tr>
     <td>4</td>
     <td>Create a Pastry class</td>
-    <td>Pastry pastry = new Pastry();</td>
+    <td>Pastry pastry = new Pastry()</td>
     <td>pastry</td>
   </tr>
   <tr>
@@ -88,31 +88,31 @@ No known bugs at this time.
   <tr>
     <td>7</td>
     <td>Create a Drink class</td>
-    <td>Drink coffee = new Drink();</td>
+    <td>Drink coffee = new Drink()</td>
     <td>coffee</td>
   </tr>
   <tr>
     <td>8</td>
     <td>Method gets price of a coffee</td>
-    <td>coffee.GetPrice();</td>
+    <td>coffee.GetPrice()</td>
     <td>2</td>
   </tr>
   <tr>
     <td>9</td>
     <td>Method gets size of a coffee</td>
-    <td>coffee.GetSize();</td>
+    <td>coffee.GetSize()</td>
     <td>"small"</td>
   </tr>
   <tr>
     <td>10</td>
     <td>Creates instance of bread object that stores price and users order number</td>
-    <td>Bread bread = new Bread(orderNum);</td>
+    <td>Bread bread = new Bread(orderNum)</td>
     <td>bread</td>
   </tr>
   <tr>
     <td>11</td>
     <td>Creates instance of pastry object that stores price and users order number</td>
-    <td>Pastry pastry = new Pastry(orderNum);</td>
+    <td>Pastry pastry = new Pastry(orderNum)</td>
     <td>pastry</td>
   </tr>
   <tr>
