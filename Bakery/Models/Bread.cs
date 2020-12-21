@@ -27,7 +27,7 @@ namespace Bakery.Models
         {
             if (orderNum % 2 == 0)
             {
-                Price = 3;
+                Price = 4;
                 int totalPrice = Price * orderNum;
                 return totalPrice;
             }
