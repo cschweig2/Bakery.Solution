@@ -46,6 +46,5 @@ namespace Bakery.Tests
             double result = pastry.TotalPricePastry(3);
             Assert.AreEqual(totalTestPrice, result);
         }
-        
     }
 }
