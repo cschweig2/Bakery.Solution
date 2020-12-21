@@ -29,5 +29,13 @@ namespace Bakery.Tests
             string size = coffee.GetSize();
             Assert.AreEqual(testSize, size);
         }
+        [TestMethod]
+        public void TotalPriceCofee_ReturnsTotalPriceOfCoffeeOrder_Int()
+        {
+            Drink coffeeSmall = new Drink("Small", 1);
+            double testTotalPrice = 3;
+            double result = coffeeSmall.TotalPriceCoffee(3);
+            Assert.AreEqual(testTotalPrice, result);
+        }
     }
 }
