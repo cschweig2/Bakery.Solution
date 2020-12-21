@@ -26,7 +26,7 @@ namespace Bakery.Models
 
         public double TotalPriceCoffee(int orderNum)
         {
-            return Price * orderNum + 1;
+            return Price * orderNum;
         }
     }
 }
