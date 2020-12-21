@@ -18,7 +18,7 @@ namespace Bakery.Tests
         {
             Bread bread = new Bread();
             int testPrice = 5;
-            Bread.Price = 5;
+            bread.Price = 5;
             int price = bread.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
@@ -35,7 +35,7 @@ namespace Bakery.Tests
         {
             Bread bread = new Bread();
             int testTotalPrice = 8;
-            int result = Bread.TotalPriceBread(2);
+            int result = bread.TotalPriceBread(2);
             Assert.AreEqual(testTotalPrice, result);
         }
         [TestMethod]
@@ -43,7 +43,7 @@ namespace Bakery.Tests
         {
             Bread bread = new Bread();
             int testTotalPrice = 13;
-            int result = Bread.TotalPriceBread(3);
+            int result = bread.TotalPriceBread(3);
             Assert.AreEqual(testTotalPrice, result);
         }
     }
