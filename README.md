@@ -142,7 +142,7 @@ No known bugs at this time.
   <tr>
     <td>16</td>
     <td>TotalPriceCoffee() will return the total price of small coffees based on order</td>
-    <td>1. Coffee coffeeSmall = new Coffee("Small", 1) 2. coffeeSmall.TotalPriceCoffee(3)</td>
+    <td>1. Drink coffeeSmall = new Drink("Small", 1) 2. coffeeSmall.TotalPriceCoffee(3)</td>
     <td>total price = 1</td>
   </tr>
 </table>
