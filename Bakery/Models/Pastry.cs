@@ -30,7 +30,7 @@ namespace Bakery.Models
         {
             if (orderNum % 2 == 0)
             {
-                SetPrice(2.50);
+                SetPrice(1.50);
                 double totalPastry = Price * System.Convert.ToDouble(orderNum);
                 return totalPastry;
             }
