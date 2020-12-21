@@ -5,7 +5,7 @@ namespace Bakery.Models
 {
     public class Bread
     {
-        public static int Price { get; set; }
+        public int Price { get; set; }
 
         public Bread()
         {
@@ -23,18 +23,18 @@ namespace Bakery.Models
             return Price;
         }
 
-        public static int TotalPriceBread(int orderNum)
+        public int TotalPriceBread(int orderNum)
         {
             if (orderNum % 2 == 0)
             {
-                Price = 4;
+                Bread.SetPrice(4);
                 int totalPrice = Price * orderNum;
                 return totalPrice;
             }
             else if ((orderNum - 1) % 2 == 0)
             {
-                Price = 4;
-                int totalPrice = 4 * (orderNum - 1);
+                Bread.SetPrice(4);
+                int totalPrice = Price * (orderNum - 1);
                 return totalPrice + 5;
             }
             else
