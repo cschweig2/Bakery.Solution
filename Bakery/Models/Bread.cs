@@ -5,28 +5,43 @@ namespace Bakery.Models
 {
     public class Bread
     {
-        private int _price { get; set; }
-        public int OrderNum { get; set; }
+        public static int Price { get; set; }
 
-        public Bread(int orderNum)
+        public Bread()
         {
-            OrderNum = orderNum;
-            _price = 0;
+            Price = 0;
         }
 
         public int GetPrice()
         {
-            return _price;
+            return Price;
         }
 
         public int SetPrice(int price)
         {
-            if (price >= 2)
-            {
-                _price = price;
-            }
-            return _price;
+            Price = price;
+            return Price;
         }
-        
+
+        public static int TotalPriceBread(int orderNum)
+        {
+            if (orderNum % 2 == 0)
+            {
+                Price = 3;
+                int totalPrice = Price * orderNum;
+                return totalPrice;
+            }
+            // else if ((bread.OrderNum - 1) % 2 == 0)
+            // {
+            //     bread.Price = 4;
+            //     int totalPrice = 4 * (bread.OrderNum - 1);
+            //     return totalPrice + 5;
+            // }
+            else
+            {
+                return Price * orderNum;
+            }
+        }
+
     }
 }

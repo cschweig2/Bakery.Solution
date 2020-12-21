@@ -10,37 +10,42 @@ namespace Bakery.Tests
         [TestMethod]
         public void BreadConstructor_CreatesInstanceOfBread_Bread()
         {
-            Bread bread = new Bread(2);
+            Bread bread = new Bread();
             Assert.AreEqual(typeof(Bread), bread.GetType());
         }
         [TestMethod]
         public void GetPrice_ReturnsPriceOfBread_Int()
         {
-            Bread bread = new Bread(1);
+            Bread bread = new Bread();
             int testPrice = 5;
-            bread.SetPrice(5);
+            Bread.Price = 5;
             int price = bread.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
         [TestMethod]
         public void SetPrice_SetsPriceOfBread_Int()
         {
-            Bread bread = new Bread(2);
-            int testPrice = 2;
-            int price = bread.SetPrice(2);
+            Bread bread = new Bread();
+            int testPrice = 5;
+            int price = bread.SetPrice(5);
             Assert.AreEqual(testPrice, price);
         }
         [TestMethod]
-        public void SetPrice_ReturnsDiscountedPriceWhenTriggered_Int()
+        public void TotalPriceBread_ReturnsDiscountedTotalWhenTriggered_Int()
         {
-            Bread bread = new Bread(2);
-            if (bread.OrderNum % 2 == 0)
-            {
-                bread.SetPrice(4);
-            }
-            int testPrice = 4;
-            int price = bread.GetPrice();
-            Assert.AreEqual(testPrice, price);
+            Bread bread = new Bread();
+            int testTotalPrice = 8;
+            int result = Bread.TotalPriceBread(2);
+            Assert.AreEqual(testTotalPrice, result);
         }
+        // [TestMethod]
+        // public void TotalPriceBread_ReturnsDiscountedPricePlusRegularPriceOnOddNumberedOrders_Int()
+        // {
+        //     Bread bread = new Bread(3);
+        //     bread.SetPrice(4);
+        //     int testPrice = 
+        //     int price = bread.GetPrice();
+            
+        // }
     }
 }
