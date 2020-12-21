@@ -14,36 +14,36 @@ namespace Bakery.Tests
             Assert.AreEqual(typeof(Bread), bread.GetType());
         }
         [TestMethod]
-        public void GetPrice_ReturnsPriceOfBread_Int()
+        public void GetPrice_ReturnsPriceOfBread_Double()
         {
             Bread bread = new Bread();
-            int testPrice = 5;
+            double testPrice = 5;
             bread.Price = 5;
-            int price = bread.GetPrice();
+            double price = bread.GetPrice();
             Assert.AreEqual(testPrice, price);
         }
         [TestMethod]
-        public void SetPrice_SetsPriceOfBread_Int()
+        public void SetPrice_SetsPriceOfBread_Double()
         {
             Bread bread = new Bread();
-            int testPrice = 5;
-            int price = bread.SetPrice(5);
+            double testPrice = 5;
+            double price = bread.SetPrice(5);
             Assert.AreEqual(testPrice, price);
         }
         [TestMethod]
-        public void TotalPriceBread_ReturnsDiscountedTotalWhenTriggered_Int()
+        public void TotalPriceBread_ReturnsDiscountedTotalWhenTriggered_Double()
         {
             Bread bread = new Bread();
-            int testTotalPrice = 8;
-            int result = bread.TotalPriceBread(2);
+            double testTotalPrice = 8;
+            double result = bread.TotalPriceBread(2);
             Assert.AreEqual(testTotalPrice, result);
         }
         [TestMethod]
-        public void TotalPriceBread_ReturnsDiscountedPricePlusRegularPriceOnOddNumberedOrders_Int()
+        public void TotalPriceBread_ReturnsDiscountedPricePlusRegularPriceOnOddNumberedOrders_Double()
         {
             Bread bread = new Bread();
-            int testTotalPrice = 13;
-            int result = bread.TotalPriceBread(3);
+            double testTotalPrice = 13;
+            double result = bread.TotalPriceBread(3);
             Assert.AreEqual(testTotalPrice, result);
         }
     }
