@@ -38,6 +38,14 @@ namespace Bakery.Tests
             double result = pastry.TotalPricePastry(2);
             Assert.AreEqual(totalTestPrice, result);
         }
+        [TestMethod]
+        public void TotalPricePastry_ReturnsDiscountedTotalWhenOrderIsThreeOrMore_Double()
+        {
+            Pastry pastry = new Pastry();
+            double totalTestPrice = 5.00;
+            double result = pastry.TotalPricePastry(3);
+            Assert.AreEqual(totalTestPrice, result);
+        }
         
     }
 }
