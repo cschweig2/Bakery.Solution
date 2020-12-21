@@ -31,12 +31,12 @@ namespace Bakery.Models
                 int totalPrice = Price * orderNum;
                 return totalPrice;
             }
-            // else if ((bread.OrderNum - 1) % 2 == 0)
-            // {
-            //     bread.Price = 4;
-            //     int totalPrice = 4 * (bread.OrderNum - 1);
-            //     return totalPrice + 5;
-            // }
+            else if ((orderNum - 1) % 2 == 0)
+            {
+                Price = 4;
+                int totalPrice = 4 * (orderNum - 1);
+                return totalPrice + 5;
+            }
             else
             {
                 return Price * orderNum;
